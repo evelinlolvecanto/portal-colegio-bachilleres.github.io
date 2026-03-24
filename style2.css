@@ -1,0 +1,179 @@
+/* 
+    { background-image } establece el fondo como imagen en lugar de color
+
+    { background-size: cover; } hace que la imagen de fondo cubra todo el área del componente 
+
+    {background-size: contain; } hace que la imagen de fondo se ajuste al tamaño del componente
+
+    { background-position: center; } centra la imagen dentro del componente
+
+    { background-attachment: fixed; } hace que la imagen de fondo permanezca fija
+
+    {border: var(--bs-black-200);} agrega un borde al componente,
+    el valor se puede ajustar para cambiar el grosor y el color del borde
+
+    {border-radius: .25rem;} redondea las esquinas del componente,
+    el valor se puede ajustar para hacerlas más o menos redondeadas
+
+    { width: fit-content; } ajusta el ancho del componente al contenido que tiene dentro,
+    en lugar de ocupar todo el ancho de la página
+
+    { width: calc(100% - 160px); } ajusta el ancho del componente al contenido que tiene dentro,
+    en lugar de ocupar todo el ancho de la página, el 100% es el ancho total del contenedor y
+    se le resta 160px para dejar espacio para el padding y margin, se lo quita desde la derecha
+    para que el padding y margin no afecten el ancho total del componente
+
+    { padding: 20px 30px 1px 0px; } agrega espacio dentro del componente, el primer valor es el
+    padding superior, el segundo es el padding derecho, el tercero es el padding inferior
+    y el cuarto es el padding izquierdo
+
+    { margin: 0 auto; } centra el componente horizontalmente dentro de su contenedor
+
+    { background: linear-gradient(180deg, rgba(0, 0, 0, 0.993), rgba(58, 57, 57, 0.993)); } 
+    agrega un fondo con un degradado lineal, el numero del deg son los grados donde se aplica
+    el degradado, el primer color es el color inicial del degradado y el segundo color es el
+    color final del degradado
+
+    {postion: sticky;} hace que el componente se quede fijo en la parte superior de la página
+
+    {top: 20px;} establece la posición del componente a 20 píxeles desde la parte superior de la página
+
+    {z-index: 9999;} asegura que el componente se muestre por encima de otros elementos en la página
+    con un valor alto, se puede ajustar para cambiar la prioridad de visualización del componente
+    cambiando el número que tiene, mientras menor sea más abajo podría quedar
+*/
+.imagen {
+  background-image: url("Imagenes/portada.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 40px;
+  color: rgb(33, 29, 29);
+  border-radius: 10px;
+}
+
+.component {
+  color: rgb(0, 213, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 213, 255, 0.993),
+    rgba(0, 213, 255, 0.993)
+  );
+  background-size: contain;
+  border: var(--bs-black-200);
+  border-radius: 0.25rem;
+  width: calc(100% - 300px);
+  padding: 10px 80px 0.1px 0px;
+  margin: 0 80px 0 150px;
+  position: fixed;
+  top: 20px;
+  z-index: 9999;
+}
+
+.titulin {
+  color: rgb(0, 0, 0);
+  text-shadow:
+    0 0 10px rgb(1, 61, 173),
+    0 0 30px rgb(0, 7, 102);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: fit-content;
+  padding: 10px 0px 0.1px 0px;
+  margin: 0 0 0 160px;
+}
+/* 
+    { .component a{  } selecciona los enlaces dentro de la clase component para cambiarles el diseño
+
+    { color: #FFD700; } establece el color del texto de los enlaces a dorado
+
+    { text-decoration: none; } elimina el subrayado de los enlaces
+
+    { font-weight: bold; } hace que el texto de los enlaces sea negrita por el grosor,
+    se puede cambiar usando numeros del 100 al 900
+
+    { transition: 0.3s; } agrega una transición rápida y suave para los cambios de estilo al pasar
+    el mouse sobre los enlaces
+
+    { .component a:hover{  } selecciona los enlaces dentro de la clase component cuando el mouse
+    está sobre ellos para cambiarles el diseño (hover) significa "flotar" o "pasar el mouse por encima"
+
+    { color: #FFA500; } cambia el color del texto a naranja al pasar el mouse
+
+    { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); } agrega un efecto de resplandor blanco
+    alrededor del texto al pasar el mouse, el primer digito es desplazamiento horizontal,
+    el segundo es desplazamiento vertical, el tercero es el desenfoque y el cuarto es el color del resplandor
+    se pueden poner múltiples sombras separadas por comas para crear efectos más complejos
+
+    otros pseudoselectores para enlaces:
+
+    { a:visited {  } Cuando ya visitaste el enlace, puede cambiar el color, el color de fondo, el borde,
+    etc. para indicar que ya lo has visitado
+
+    { a:active {   } Cuando haces click en el enlace, apenas se ve mientras haces click puedes cambiar
+    color: blabla; transform: scale(bla.bla); para dar un efecto mientras haces click
+
+    { a:focus } Cuando navegas con tab o haces click, puedes cambiar el outline: 2px solid color;
+    background-color: blabla; para dar un efecto de enfoque al enlace seleccionado
+*/
+.component a {
+  color: #000000;
+  font-size: large;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 1s;
+}
+
+.component a:hover {
+  color: #ffa600;
+  text-shadow: 0 0 20px rgb(255, 123, 0);
+}
+
+.milagrito {
+  color: #ff8800;
+  font-size: x-large;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow:
+    0 0 20px rgb(238, 255, 0),
+    0 0 30px rgb(255, 0, 0);
+}
+
+.card {
+  background-color: rgba(49, 243, 233, 0.863);
+  border: none;
+  color: rgba(49, 243, 233, 0.863);
+  padding: 0;
+}
+
+.card-img-top {
+  background-image: url("./../Imagenes/milagro-fondo.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.card-body {
+  background: linear-gradient(180deg, rgba(0, 102, 225), rgb(0, 102, 255));
+  background-color: rgb(0, 102, 225);
+  color: rgb(0, 102, 225);
+  padding: 20px;
+}
+
+.card-body p {
+  color: #162d62;
+  font-size: large;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 1.5s;
+}
+
+.card-body p:hover {
+  color: #ffffff;
+  text-shadow: 0 0 1px rgb(255, 123, 0);
+}
+
+
+section {
+  padding: 20px;
+}
